@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClient));
             this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.textBoxMiddleName = new System.Windows.Forms.TextBox();
@@ -85,6 +86,7 @@
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(127, 24);
             this.textBoxPhone.TabIndex = 0;
+            this.textBoxPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPhone_KeyPress);
             // 
             // textBoxEmail
             // 
@@ -191,6 +193,7 @@
             // 
             // buttonEdit
             // 
+            this.buttonEdit.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonEdit.Location = new System.Drawing.Point(510, 239);
             this.buttonEdit.Name = "buttonEdit";
             this.buttonEdit.Size = new System.Drawing.Size(78, 34);
@@ -201,6 +204,7 @@
             // 
             // buttonAdd
             // 
+            this.buttonAdd.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonAdd.Location = new System.Drawing.Point(426, 239);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(78, 34);
@@ -211,6 +215,7 @@
             // 
             // buttonDel
             // 
+            this.buttonDel.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.buttonDel.Location = new System.Drawing.Point(594, 239);
             this.buttonDel.Name = "buttonDel";
             this.buttonDel.Size = new System.Drawing.Size(78, 34);
@@ -249,6 +254,8 @@
             this.Controls.Add(this.textBoxMiddleName);
             this.Controls.Add(this.textBoxLastName);
             this.Controls.Add(this.textBoxFirstName);
+            this.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Клиенты";

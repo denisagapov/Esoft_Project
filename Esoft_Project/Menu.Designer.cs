@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Menu));
             this.Logo = new System.Windows.Forms.PictureBox();
             this.buttonOpenAgents = new System.Windows.Forms.Button();
             this.buttonOpenRealEstates = new System.Windows.Forms.Button();
@@ -73,6 +74,7 @@
             this.buttonOpenRealEstates.TabIndex = 1;
             this.buttonOpenRealEstates.Text = "Объекты недвижимости";
             this.buttonOpenRealEstates.UseVisualStyleBackColor = true;
+            this.buttonOpenRealEstates.Click += new System.EventHandler(this.buttonOpenRealEstates_Click);
             // 
             // buttonOpenClients
             // 
@@ -136,6 +138,7 @@
             this.Controls.Add(this.buttonOpenRealEstates);
             this.Controls.Add(this.buttonOpenAgents);
             this.Controls.Add(this.Logo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Menu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Esoft";

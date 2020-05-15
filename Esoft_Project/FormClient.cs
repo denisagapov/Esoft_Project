@@ -136,5 +136,15 @@ namespace Esoft_Project
                 MessageBox.Show("Невозможно удалить, эта запись используется!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void textBoxPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char number = e.KeyChar;
+
+            if (!Char.IsDigit(number))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
