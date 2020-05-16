@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormRealEstate));
             this.textBoxAddress_City = new System.Windows.Forms.TextBox();
             this.textBoxAddress_Street = new System.Windows.Forms.TextBox();
             this.textBoxTotalFloors = new System.Windows.Forms.TextBox();
@@ -57,9 +58,6 @@
             this.columnHeader23 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader24 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.comboBoxType = new System.Windows.Forms.ComboBox();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonEdit = new System.Windows.Forms.Button();
-            this.buttonDel = new System.Windows.Forms.Button();
             this.textBoxRooms = new System.Windows.Forms.TextBox();
             this.labelRooms = new System.Windows.Forms.Label();
             this.listViewRealEstateSet_Land = new System.Windows.Forms.ListView();
@@ -79,27 +77,34 @@
             this.columnHeader13 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader14 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader15 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonDel = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBoxAddress_City
             // 
+            this.textBoxAddress_City.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.textBoxAddress_City.Location = new System.Drawing.Point(22, 25);
             this.textBoxAddress_City.Name = "textBoxAddress_City";
-            this.textBoxAddress_City.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAddress_City.Size = new System.Drawing.Size(100, 21);
             this.textBoxAddress_City.TabIndex = 0;
+            this.textBoxAddress_City.TextChanged += new System.EventHandler(this.textBoxAddress_City_TextChanged);
             // 
             // textBoxAddress_Street
             // 
             this.textBoxAddress_Street.Location = new System.Drawing.Point(22, 64);
             this.textBoxAddress_Street.Name = "textBoxAddress_Street";
-            this.textBoxAddress_Street.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAddress_Street.Size = new System.Drawing.Size(100, 21);
             this.textBoxAddress_Street.TabIndex = 1;
             // 
             // textBoxTotalFloors
             // 
             this.textBoxTotalFloors.Location = new System.Drawing.Point(22, 298);
             this.textBoxTotalFloors.Name = "textBoxTotalFloors";
-            this.textBoxTotalFloors.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTotalFloors.Size = new System.Drawing.Size(100, 21);
             this.textBoxTotalFloors.TabIndex = 2;
             this.textBoxTotalFloors.Visible = false;
             this.textBoxTotalFloors.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTotalFloors_KeyPress);
@@ -108,15 +113,16 @@
             // 
             this.textBoxFloor.Location = new System.Drawing.Point(22, 337);
             this.textBoxFloor.Name = "textBoxFloor";
-            this.textBoxFloor.Size = new System.Drawing.Size(100, 20);
+            this.textBoxFloor.Size = new System.Drawing.Size(100, 21);
             this.textBoxFloor.TabIndex = 3;
             this.textBoxFloor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxFloor_KeyPress);
             // 
             // textBoxTotalArea
             // 
+            this.textBoxTotalArea.CausesValidation = false;
             this.textBoxTotalArea.Location = new System.Drawing.Point(22, 259);
             this.textBoxTotalArea.Name = "textBoxTotalArea";
-            this.textBoxTotalArea.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTotalArea.Size = new System.Drawing.Size(100, 21);
             this.textBoxTotalArea.TabIndex = 5;
             this.textBoxTotalArea.TextChanged += new System.EventHandler(this.textBoxTotalArea_TextChanged);
             this.textBoxTotalArea.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTotalArea_KeyPress);
@@ -125,7 +131,7 @@
             // 
             this.textBoxCoordinate_longitude.Location = new System.Drawing.Point(22, 220);
             this.textBoxCoordinate_longitude.Name = "textBoxCoordinate_longitude";
-            this.textBoxCoordinate_longitude.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCoordinate_longitude.Size = new System.Drawing.Size(100, 21);
             this.textBoxCoordinate_longitude.TabIndex = 6;
             this.textBoxCoordinate_longitude.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCoordinate_longitude_KeyPress);
             // 
@@ -133,15 +139,16 @@
             // 
             this.textBoxCoordinate_latitude.Location = new System.Drawing.Point(22, 181);
             this.textBoxCoordinate_latitude.Name = "textBoxCoordinate_latitude";
-            this.textBoxCoordinate_latitude.Size = new System.Drawing.Size(100, 20);
+            this.textBoxCoordinate_latitude.Size = new System.Drawing.Size(100, 21);
             this.textBoxCoordinate_latitude.TabIndex = 7;
+            this.textBoxCoordinate_latitude.TextChanged += new System.EventHandler(this.textBoxCoordinate_latitude_TextChanged);
             this.textBoxCoordinate_latitude.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCoordinate_latitude_KeyPress);
             // 
             // textBoxAddress_Number
             // 
             this.textBoxAddress_Number.Location = new System.Drawing.Point(22, 142);
             this.textBoxAddress_Number.Name = "textBoxAddress_Number";
-            this.textBoxAddress_Number.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAddress_Number.Size = new System.Drawing.Size(100, 21);
             this.textBoxAddress_Number.TabIndex = 8;
             this.textBoxAddress_Number.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAddress_Number_KeyPress);
             // 
@@ -149,7 +156,7 @@
             // 
             this.textBoxAddress_House.Location = new System.Drawing.Point(22, 103);
             this.textBoxAddress_House.Name = "textBoxAddress_House";
-            this.textBoxAddress_House.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAddress_House.Size = new System.Drawing.Size(100, 21);
             this.textBoxAddress_House.TabIndex = 9;
             this.textBoxAddress_House.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxAddress_House_KeyPress);
             // 
@@ -158,7 +165,7 @@
             this.labelAddress_City.AutoSize = true;
             this.labelAddress_City.Location = new System.Drawing.Point(19, 9);
             this.labelAddress_City.Name = "labelAddress_City";
-            this.labelAddress_City.Size = new System.Drawing.Size(37, 13);
+            this.labelAddress_City.Size = new System.Drawing.Size(36, 13);
             this.labelAddress_City.TabIndex = 10;
             this.labelAddress_City.Text = "Город";
             // 
@@ -167,7 +174,7 @@
             this.labelAddress_Street.AutoSize = true;
             this.labelAddress_Street.Location = new System.Drawing.Point(19, 48);
             this.labelAddress_Street.Name = "labelAddress_Street";
-            this.labelAddress_Street.Size = new System.Drawing.Size(39, 13);
+            this.labelAddress_Street.Size = new System.Drawing.Size(38, 13);
             this.labelAddress_Street.TabIndex = 10;
             this.labelAddress_Street.Text = "Улица";
             // 
@@ -196,14 +203,14 @@
             this.labelCoordinate_latitude.Name = "labelCoordinate_latitude";
             this.labelCoordinate_latitude.Size = new System.Drawing.Size(46, 13);
             this.labelCoordinate_latitude.TabIndex = 10;
-            this.labelCoordinate_latitude.Text = "Ширина";
+            this.labelCoordinate_latitude.Text = "Широта";
             // 
             // labelCoordinate_longitude
             // 
             this.labelCoordinate_longitude.AutoSize = true;
             this.labelCoordinate_longitude.Location = new System.Drawing.Point(19, 204);
             this.labelCoordinate_longitude.Name = "labelCoordinate_longitude";
-            this.labelCoordinate_longitude.Size = new System.Drawing.Size(50, 13);
+            this.labelCoordinate_longitude.Size = new System.Drawing.Size(49, 13);
             this.labelCoordinate_longitude.TabIndex = 10;
             this.labelCoordinate_longitude.Text = "Долгота";
             // 
@@ -221,7 +228,7 @@
             this.labelTotalFloors.AutoSize = true;
             this.labelTotalFloors.Location = new System.Drawing.Point(19, 282);
             this.labelTotalFloors.Name = "labelTotalFloors";
-            this.labelTotalFloors.Size = new System.Drawing.Size(106, 13);
+            this.labelTotalFloors.Size = new System.Drawing.Size(107, 13);
             this.labelTotalFloors.TabIndex = 10;
             this.labelTotalFloors.Text = "Количество этажей";
             this.labelTotalFloors.Visible = false;
@@ -253,7 +260,7 @@
             this.listViewRealEstateSet_Apartment.Location = new System.Drawing.Point(128, 9);
             this.listViewRealEstateSet_Apartment.MultiSelect = false;
             this.listViewRealEstateSet_Apartment.Name = "listViewRealEstateSet_Apartment";
-            this.listViewRealEstateSet_Apartment.Size = new System.Drawing.Size(607, 270);
+            this.listViewRealEstateSet_Apartment.Size = new System.Drawing.Size(631, 271);
             this.listViewRealEstateSet_Apartment.TabIndex = 11;
             this.listViewRealEstateSet_Apartment.UseCompatibleStateImageBehavior = false;
             this.listViewRealEstateSet_Apartment.View = System.Windows.Forms.View.Details;
@@ -302,6 +309,7 @@
             // columnHeader24
             // 
             this.columnHeader24.Text = "Этаж";
+            this.columnHeader24.Width = 106;
             // 
             // comboBoxType
             // 
@@ -316,41 +324,11 @@
             this.comboBoxType.TabIndex = 12;
             this.comboBoxType.SelectedIndexChanged += new System.EventHandler(this.comboBoxType_SelectedIndexChanged);
             // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Location = new System.Drawing.Point(461, 415);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(75, 23);
-            this.buttonAdd.TabIndex = 13;
-            this.buttonAdd.Text = "Создать";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // buttonEdit
-            // 
-            this.buttonEdit.Location = new System.Drawing.Point(542, 415);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(75, 23);
-            this.buttonEdit.TabIndex = 14;
-            this.buttonEdit.Text = "Изменить";
-            this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
-            // 
-            // buttonDel
-            // 
-            this.buttonDel.Location = new System.Drawing.Point(623, 415);
-            this.buttonDel.Name = "buttonDel";
-            this.buttonDel.Size = new System.Drawing.Size(75, 23);
-            this.buttonDel.TabIndex = 15;
-            this.buttonDel.Text = "Удалить";
-            this.buttonDel.UseVisualStyleBackColor = true;
-            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
-            // 
             // textBoxRooms
             // 
             this.textBoxRooms.Location = new System.Drawing.Point(22, 298);
             this.textBoxRooms.Name = "textBoxRooms";
-            this.textBoxRooms.Size = new System.Drawing.Size(100, 20);
+            this.textBoxRooms.Size = new System.Drawing.Size(100, 21);
             this.textBoxRooms.TabIndex = 3;
             this.textBoxRooms.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxRooms_KeyPress);
             // 
@@ -359,7 +337,7 @@
             this.labelRooms.AutoSize = true;
             this.labelRooms.Location = new System.Drawing.Point(19, 282);
             this.labelRooms.Name = "labelRooms";
-            this.labelRooms.Size = new System.Drawing.Size(106, 13);
+            this.labelRooms.Size = new System.Drawing.Size(107, 13);
             this.labelRooms.TabIndex = 10;
             this.labelRooms.Text = "Количество комнат";
             // 
@@ -379,7 +357,7 @@
             this.listViewRealEstateSet_Land.Location = new System.Drawing.Point(128, 9);
             this.listViewRealEstateSet_Land.MultiSelect = false;
             this.listViewRealEstateSet_Land.Name = "listViewRealEstateSet_Land";
-            this.listViewRealEstateSet_Land.Size = new System.Drawing.Size(607, 270);
+            this.listViewRealEstateSet_Land.Size = new System.Drawing.Size(669, 271);
             this.listViewRealEstateSet_Land.TabIndex = 16;
             this.listViewRealEstateSet_Land.UseCompatibleStateImageBehavior = false;
             this.listViewRealEstateSet_Land.View = System.Windows.Forms.View.Details;
@@ -431,7 +409,7 @@
             this.listViewRealEstateSet_House.Location = new System.Drawing.Point(128, 9);
             this.listViewRealEstateSet_House.MultiSelect = false;
             this.listViewRealEstateSet_House.Name = "listViewRealEstateSet_House";
-            this.listViewRealEstateSet_House.Size = new System.Drawing.Size(607, 270);
+            this.listViewRealEstateSet_House.Size = new System.Drawing.Size(647, 271);
             this.listViewRealEstateSet_House.TabIndex = 17;
             this.listViewRealEstateSet_House.UseCompatibleStateImageBehavior = false;
             this.listViewRealEstateSet_House.View = System.Windows.Forms.View.Details;
@@ -470,16 +448,74 @@
             // 
             this.columnHeader15.Text = "Количество этажей";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Esoft_Project.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(218, 337);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(372, 124);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 18;
+            this.pictureBox1.TabStop = false;
+            // 
+            // buttonDel
+            // 
+            this.buttonDel.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.buttonDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDel.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDel.Location = new System.Drawing.Point(670, 286);
+            this.buttonDel.Margin = new System.Windows.Forms.Padding(15);
+            this.buttonDel.Name = "buttonDel";
+            this.buttonDel.Padding = new System.Windows.Forms.Padding(10);
+            this.buttonDel.Size = new System.Drawing.Size(89, 48);
+            this.buttonDel.TabIndex = 19;
+            this.buttonDel.TabStop = false;
+            this.buttonDel.Text = "Удалить";
+            this.buttonDel.UseVisualStyleBackColor = true;
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEdit.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonEdit.Location = new System.Drawing.Point(560, 286);
+            this.buttonEdit.Margin = new System.Windows.Forms.Padding(15);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Padding = new System.Windows.Forms.Padding(10);
+            this.buttonEdit.Size = new System.Drawing.Size(103, 48);
+            this.buttonEdit.TabIndex = 20;
+            this.buttonEdit.TabStop = false;
+            this.buttonEdit.Text = "Изменить";
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonAdd.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonAdd.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAdd.Location = new System.Drawing.Point(452, 286);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(15);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Padding = new System.Windows.Forms.Padding(10);
+            this.buttonAdd.Size = new System.Drawing.Size(100, 48);
+            this.buttonAdd.TabIndex = 21;
+            this.buttonAdd.TabStop = false;
+            this.buttonAdd.Text = "Создать";
+            this.buttonAdd.UseVisualStyleBackColor = false;
+            // 
             // FormRealEstate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(710, 450);
+            this.ClientSize = new System.Drawing.Size(759, 473);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.buttonEdit);
+            this.Controls.Add(this.buttonDel);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listViewRealEstateSet_House);
             this.Controls.Add(this.listViewRealEstateSet_Land);
-            this.Controls.Add(this.buttonDel);
-            this.Controls.Add(this.buttonEdit);
-            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.comboBoxType);
             this.Controls.Add(this.listViewRealEstateSet_Apartment);
             this.Controls.Add(this.labelRooms);
@@ -502,9 +538,12 @@
             this.Controls.Add(this.textBoxTotalFloors);
             this.Controls.Add(this.textBoxAddress_Street);
             this.Controls.Add(this.textBoxAddress_City);
+            this.Font = new System.Drawing.Font("Roboto Light", 8.25F);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormRealEstate";
-            this.Text = "FormRealEstate";
+            this.Text = "Объекты недвижимости";
             this.Load += new System.EventHandler(this.FormRealEstate_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -541,9 +580,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader23;
         private System.Windows.Forms.ColumnHeader columnHeader24;
         private System.Windows.Forms.ComboBox comboBoxType;
-        private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Button buttonEdit;
-        private System.Windows.Forms.Button buttonDel;
         private System.Windows.Forms.TextBox textBoxRooms;
         private System.Windows.Forms.Label labelRooms;
         private System.Windows.Forms.ListView listViewRealEstateSet_Land;
@@ -563,5 +599,9 @@
         private System.Windows.Forms.ColumnHeader columnHeader13;
         private System.Windows.Forms.ColumnHeader columnHeader14;
         private System.Windows.Forms.ColumnHeader columnHeader15;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonDel;
+        private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Button buttonAdd;
     }
 }

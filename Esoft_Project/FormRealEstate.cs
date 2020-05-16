@@ -102,32 +102,48 @@ namespace Esoft_Project
 
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            RealEstateSet realEstate = new RealEstateSet();
-            realEstate.Address_City = textBoxAddress_City.Text;
-            realEstate.Address_House = textBoxAddress_House.Text;
-            realEstate.Address_Street = textBoxAddress_Street.Text;
-            realEstate.Address_Number = textBoxAddress_Number.Text;
-            realEstate.Coordinate_latitude = Convert.ToDouble(textBoxCoordinate_latitude.Text);
-            realEstate.Coordinate_longitude = Convert.ToDouble(textBoxCoordinate_longitude.Text);
-            realEstate.TotalArea = Convert.ToDouble(textBoxTotalArea.Text);
-            if (comboBoxType.SelectedIndex == 0)
+            try
             {
-                realEstate.Type = 0;
-                realEstate.Rooms = Convert.ToInt32(textBoxRooms.Text);
-                realEstate.Floor = Convert.ToInt32(textBoxFloor.Text);
+                RealEstateSet realEstate = new RealEstateSet();
+                if (textBoxAddress_City.Text != "") { realEstate.Address_City = textBoxAddress_City.Text; }
+                if (textBoxAddress_House.Text != "") { realEstate.Address_House = textBoxAddress_House.Text; }
+                if (textBoxAddress_Street.Text != "") { realEstate.Address_Street = textBoxAddress_Street.Text; }
+                if (textBoxAddress_Number.Text != "") { realEstate.Address_Number = textBoxAddress_Number.Text; }
+                if (textBoxCoordinate_latitude.Text != "") { realEstate.Coordinate_latitude = Convert.ToDouble(textBoxCoordinate_latitude.Text); }
+                if (textBoxCoordinate_longitude.Text != "") { realEstate.Coordinate_longitude = Convert.ToDouble(textBoxCoordinate_longitude.Text); }
+                if (textBoxTotalArea.Text != "") { realEstate.TotalArea = Convert.ToDouble(textBoxTotalArea.Text); }
+                if (comboBoxType.SelectedIndex == 0)
+                {
+                    realEstate.Type = 0;
+                    if (textBoxRooms.Text != "") { realEstate.Rooms = Convert.ToInt32(textBoxRooms.Text); }
+                    if (textBoxFloor.Text != "") { realEstate.Floor = Convert.ToInt32(textBoxFloor.Text); }
+                }
+                else if (comboBoxType.SelectedIndex == 1)
+                {
+                    realEstate.Type = 1;
+                    if (textBoxTotalFloors.Text != "") { realEstate.TotalFloors = Convert.ToInt32(textBoxTotalFloors.Text); }
+                }
+                else
+                {
+                    realEstate.Type = 2;
+                }
+                if (textBoxCoordinate_latitude.Text != "") { realEstate.Coordinate_latitude = Convert.ToDouble(textBoxCoordinate_latitude.Text); }
+                if ((realEstate.Coordinate_latitude < -90) || (realEstate.Coordinate_latitude > 90))
+                {
+                    throw new Exception("Диапазон широты от -90 до 90" + "\n" + "Диапазон долготы от - 180 до 180");
+
+                }
+                if (textBoxCoordinate_longitude.Text != "") { realEstate.Coordinate_longitude = Convert.ToDouble(textBoxCoordinate_longitude.Text); }
+                if ((realEstate.Coordinate_longitude < -90) || (realEstate.Coordinate_longitude > 90))
+                {
+                    throw new Exception("Диапазон широты от -90 до 90" + "\n" + "Диапазон долготы от - 180 до 180");
+                }
+                Program.wftDb.RealEstateSet.Add(realEstate);
+                Program.wftDb.SaveChanges();
+                ShowRealEstateSet();
             }
-            else if (comboBoxType.SelectedIndex == 1)
-            {
-                realEstate.Type = 1;
-                realEstate.TotalFloors = Convert.ToInt32(textBoxTotalFloors.Text);
-            }
-            else
-            {
-                realEstate.Type = 2;
-            }
-            Program.wftDb.RealEstateSet.Add(realEstate);
-            Program.wftDb.SaveChanges();
-            ShowRealEstateSet();
+            catch (Exception expection)
+            { MessageBox.Show(expection.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
         void ShowRealEstateSet()
         {
@@ -384,8 +400,7 @@ namespace Esoft_Project
         private void textBoxAddress_House_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-
-            if (!Char.IsDigit(number))
+            if (!Char.IsDigit(number) && number != 8) 
             {
                 e.Handled = true;
             }
@@ -394,8 +409,7 @@ namespace Esoft_Project
         private void textBoxAddress_Number_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-
-            if (!Char.IsDigit(number))
+            if (!Char.IsDigit(number) && number != 8)
             {
                 e.Handled = true;
             }
@@ -404,8 +418,7 @@ namespace Esoft_Project
         private void textBoxCoordinate_latitude_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-
-            if (!Char.IsDigit(number))
+            if (!Char.IsDigit(number) && number != 8 && number !=45)
             {
                 e.Handled = true;
             }
@@ -414,8 +427,7 @@ namespace Esoft_Project
         private void textBoxCoordinate_longitude_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-
-            if (!Char.IsDigit(number))
+            if (!Char.IsDigit(number) && number != 8 && number != 45)
             {
                 e.Handled = true;
             }
@@ -424,8 +436,7 @@ namespace Esoft_Project
         private void textBoxTotalArea_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-
-            if (!Char.IsDigit(number))
+            if (!Char.IsDigit(number) && number != 8)
             {
                 e.Handled = true;
             }
@@ -434,8 +445,7 @@ namespace Esoft_Project
         private void textBoxRooms_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-
-            if (!Char.IsDigit(number))
+            if (!Char.IsDigit(number) && number != 8)
             {
                 e.Handled = true;
             }
@@ -444,8 +454,7 @@ namespace Esoft_Project
         private void textBoxFloor_KeyPress(object sender, KeyPressEventArgs e)
         {
             char number = e.KeyChar;
-
-            if (!Char.IsDigit(number))
+            if (!Char.IsDigit(number) && number != 8)
             {
                 e.Handled = true;
             }
@@ -453,12 +462,20 @@ namespace Esoft_Project
 
         private void textBoxTotalFloors_KeyPress(object sender, KeyPressEventArgs e)
         {
-            char number = e.KeyChar;
-
-            if (!Char.IsDigit(number))
+           char number = e.KeyChar;
+            if (!Char.IsDigit(number) && number != 8) 
             {
                 e.Handled = true;
             }
+        }
+
+        private void textBoxCoordinate_latitude_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void textBoxAddress_City_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

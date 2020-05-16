@@ -46,10 +46,10 @@
             this.Отчество = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Телефон = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Почта = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.buttonEdit = new System.Windows.Forms.Button();
-            this.buttonAdd = new System.Windows.Forms.Button();
-            this.buttonDel = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.buttonAdd = new System.Windows.Forms.Button();
+            this.buttonEdit = new System.Windows.Forms.Button();
+            this.buttonDel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,6 +60,7 @@
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(127, 24);
             this.textBoxFirstName.TabIndex = 0;
+            this.textBoxFirstName.TabStop = false;
             this.textBoxFirstName.TextChanged += new System.EventHandler(this.textBoxFirstName_TextChanged);
             // 
             // textBoxLastName
@@ -69,6 +70,7 @@
             this.textBoxLastName.Name = "textBoxLastName";
             this.textBoxLastName.Size = new System.Drawing.Size(127, 24);
             this.textBoxLastName.TabIndex = 0;
+            this.textBoxLastName.TabStop = false;
             // 
             // textBoxMiddleName
             // 
@@ -77,6 +79,7 @@
             this.textBoxMiddleName.Name = "textBoxMiddleName";
             this.textBoxMiddleName.Size = new System.Drawing.Size(127, 24);
             this.textBoxMiddleName.TabIndex = 0;
+            this.textBoxMiddleName.TabStop = false;
             this.textBoxMiddleName.TextChanged += new System.EventHandler(this.textBoxMiddleName_TextChanged);
             // 
             // textBoxPhone
@@ -86,6 +89,7 @@
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(127, 24);
             this.textBoxPhone.TabIndex = 0;
+            this.textBoxPhone.TabStop = false;
             this.textBoxPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPhone_KeyPress);
             // 
             // textBoxEmail
@@ -95,10 +99,12 @@
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(127, 24);
             this.textBoxEmail.TabIndex = 0;
+            this.textBoxEmail.TabStop = false;
             // 
             // labelMiddleName
             // 
             this.labelMiddleName.AutoSize = true;
+            this.labelMiddleName.Font = new System.Drawing.Font("Roboto Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelMiddleName.Location = new System.Drawing.Point(21, 64);
             this.labelMiddleName.Name = "labelMiddleName";
             this.labelMiddleName.Size = new System.Drawing.Size(54, 13);
@@ -109,6 +115,7 @@
             // labelFirstName
             // 
             this.labelFirstName.AutoSize = true;
+            this.labelFirstName.Font = new System.Drawing.Font("Roboto Light", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.labelFirstName.Location = new System.Drawing.Point(21, 21);
             this.labelFirstName.Name = "labelFirstName";
             this.labelFirstName.Size = new System.Drawing.Size(29, 13);
@@ -119,9 +126,10 @@
             // labelLastName
             // 
             this.labelLastName.AutoSize = true;
+            this.labelLastName.Font = new System.Drawing.Font("Roboto Light", 8.25F);
             this.labelLastName.Location = new System.Drawing.Point(21, 107);
             this.labelLastName.Name = "labelLastName";
-            this.labelLastName.Size = new System.Drawing.Size(56, 13);
+            this.labelLastName.Size = new System.Drawing.Size(53, 13);
             this.labelLastName.TabIndex = 1;
             this.labelLastName.Text = "Фамилия";
             this.labelLastName.Click += new System.EventHandler(this.label1_Click);
@@ -129,9 +137,10 @@
             // labelPhone
             // 
             this.labelPhone.AutoSize = true;
+            this.labelPhone.Font = new System.Drawing.Font("Roboto Light", 8.25F);
             this.labelPhone.Location = new System.Drawing.Point(21, 150);
             this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(52, 13);
+            this.labelPhone.Size = new System.Drawing.Size(51, 13);
             this.labelPhone.TabIndex = 1;
             this.labelPhone.Text = "Телефон";
             this.labelPhone.Click += new System.EventHandler(this.label1_Click);
@@ -139,9 +148,10 @@
             // labelEmai
             // 
             this.labelEmai.AutoSize = true;
+            this.labelEmai.Font = new System.Drawing.Font("Roboto Light", 8.25F);
             this.labelEmai.Location = new System.Drawing.Point(21, 193);
             this.labelEmai.Name = "labelEmai";
-            this.labelEmai.Size = new System.Drawing.Size(37, 13);
+            this.labelEmai.Size = new System.Drawing.Size(38, 13);
             this.labelEmai.TabIndex = 1;
             this.labelEmai.Text = "Почта";
             this.labelEmai.Click += new System.EventHandler(this.label1_Click);
@@ -155,6 +165,8 @@
             this.Отчество,
             this.Телефон,
             this.Почта});
+            this.listViewClient.Cursor = System.Windows.Forms.Cursors.Default;
+            this.listViewClient.Font = new System.Drawing.Font("Roboto Light", 8.25F);
             this.listViewClient.FullRowSelect = true;
             this.listViewClient.GridLines = true;
             this.listViewClient.HideSelection = false;
@@ -163,6 +175,7 @@
             this.listViewClient.Name = "listViewClient";
             this.listViewClient.Size = new System.Drawing.Size(515, 212);
             this.listViewClient.TabIndex = 2;
+            this.listViewClient.TabStop = false;
             this.listViewClient.UseCompatibleStateImageBehavior = false;
             this.listViewClient.View = System.Windows.Forms.View.Details;
             this.listViewClient.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
@@ -191,58 +204,72 @@
             // 
             this.Почта.Text = "Почта";
             // 
-            // buttonEdit
-            // 
-            this.buttonEdit.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonEdit.Location = new System.Drawing.Point(510, 239);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(78, 34);
-            this.buttonEdit.TabIndex = 3;
-            this.buttonEdit.Text = "Изменить";
-            this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
-            // 
-            // buttonAdd
-            // 
-            this.buttonAdd.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonAdd.Location = new System.Drawing.Point(426, 239);
-            this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Size = new System.Drawing.Size(78, 34);
-            this.buttonAdd.TabIndex = 3;
-            this.buttonAdd.Text = "Создать";
-            this.buttonAdd.UseVisualStyleBackColor = true;
-            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
-            // 
-            // buttonDel
-            // 
-            this.buttonDel.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonDel.Location = new System.Drawing.Point(594, 239);
-            this.buttonDel.Name = "buttonDel";
-            this.buttonDel.Size = new System.Drawing.Size(78, 34);
-            this.buttonDel.TabIndex = 3;
-            this.buttonDel.Text = "Удалить";
-            this.buttonDel.UseVisualStyleBackColor = true;
-            this.buttonDel.Click += new System.EventHandler(this.buttonDel_Click);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Esoft_Project.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(191, 297);
+            this.pictureBox1.Location = new System.Drawing.Point(157, 305);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(323, 113);
+            this.pictureBox1.Size = new System.Drawing.Size(357, 142);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
+            // 
+            // buttonAdd
+            // 
+            this.buttonAdd.BackColor = System.Drawing.SystemColors.Control;
+            this.buttonAdd.Cursor = System.Windows.Forms.Cursors.Default;
+            this.buttonAdd.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonAdd.Location = new System.Drawing.Point(364, 239);
+            this.buttonAdd.Margin = new System.Windows.Forms.Padding(15);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Padding = new System.Windows.Forms.Padding(10);
+            this.buttonAdd.Size = new System.Drawing.Size(100, 48);
+            this.buttonAdd.TabIndex = 7;
+            this.buttonAdd.TabStop = false;
+            this.buttonAdd.Text = "Создать";
+            this.buttonAdd.UseVisualStyleBackColor = false;
+            // 
+            // buttonEdit
+            // 
+            this.buttonEdit.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.buttonEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonEdit.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonEdit.Location = new System.Drawing.Point(472, 239);
+            this.buttonEdit.Margin = new System.Windows.Forms.Padding(15);
+            this.buttonEdit.Name = "buttonEdit";
+            this.buttonEdit.Padding = new System.Windows.Forms.Padding(10);
+            this.buttonEdit.Size = new System.Drawing.Size(103, 48);
+            this.buttonEdit.TabIndex = 8;
+            this.buttonEdit.TabStop = false;
+            this.buttonEdit.Text = "Изменить";
+            this.buttonEdit.UseVisualStyleBackColor = true;
+            // 
+            // buttonDel
+            // 
+            this.buttonDel.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.buttonDel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonDel.Font = new System.Drawing.Font("Roboto Light", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.buttonDel.Location = new System.Drawing.Point(583, 239);
+            this.buttonDel.Margin = new System.Windows.Forms.Padding(15);
+            this.buttonDel.Name = "buttonDel";
+            this.buttonDel.Padding = new System.Windows.Forms.Padding(10);
+            this.buttonDel.Size = new System.Drawing.Size(89, 48);
+            this.buttonDel.TabIndex = 9;
+            this.buttonDel.TabStop = false;
+            this.buttonDel.Text = "Удалить";
+            this.buttonDel.UseVisualStyleBackColor = true;
             // 
             // FormClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 462);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonDel);
-            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.buttonEdit);
+            this.Controls.Add(this.buttonAdd);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.listViewClient);
             this.Controls.Add(this.labelFirstName);
             this.Controls.Add(this.labelEmai);
@@ -254,7 +281,8 @@
             this.Controls.Add(this.textBoxMiddleName);
             this.Controls.Add(this.textBoxLastName);
             this.Controls.Add(this.textBoxFirstName);
-            this.Cursor = System.Windows.Forms.Cursors.Cross;
+            this.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.Font = new System.Drawing.Font("Roboto Light", 8.25F);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormClient";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -279,9 +307,6 @@
         private System.Windows.Forms.Label labelPhone;
         private System.Windows.Forms.Label labelEmai;
         private System.Windows.Forms.ListView listViewClient;
-        private System.Windows.Forms.Button buttonEdit;
-        private System.Windows.Forms.Button buttonAdd;
-        private System.Windows.Forms.Button buttonDel;
         private System.Windows.Forms.ColumnHeader Id;
         private System.Windows.Forms.ColumnHeader Имя;
         private System.Windows.Forms.ColumnHeader Фамилия;
@@ -289,5 +314,8 @@
         private System.Windows.Forms.ColumnHeader Телефон;
         private System.Windows.Forms.ColumnHeader Почта;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button buttonAdd;
+        private System.Windows.Forms.Button buttonEdit;
+        private System.Windows.Forms.Button buttonDel;
     }
 }

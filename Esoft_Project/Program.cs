@@ -9,7 +9,7 @@ namespace Esoft_Project
     static class Program
     {
         //создание статического экземпляра класса модели ADO.EDM
-        public static WFTutorialEntities3 wftDb = new WFTutorialEntities3();
+        public static WFTutorialEntities4 wftDb = new WFTutorialEntities4();
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
