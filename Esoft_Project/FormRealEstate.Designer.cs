@@ -451,9 +451,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Esoft_Project.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(218, 337);
+            this.pictureBox1.Location = new System.Drawing.Point(217, 321);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(372, 124);
+            this.pictureBox1.Size = new System.Drawing.Size(387, 140);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
@@ -466,8 +466,8 @@
             this.buttonDel.Location = new System.Drawing.Point(670, 286);
             this.buttonDel.Margin = new System.Windows.Forms.Padding(15);
             this.buttonDel.Name = "buttonDel";
-            this.buttonDel.Padding = new System.Windows.Forms.Padding(10);
-            this.buttonDel.Size = new System.Drawing.Size(89, 48);
+            this.buttonDel.Padding = new System.Windows.Forms.Padding(3);
+            this.buttonDel.Size = new System.Drawing.Size(89, 33);
             this.buttonDel.TabIndex = 19;
             this.buttonDel.TabStop = false;
             this.buttonDel.Text = "Удалить";
@@ -481,8 +481,8 @@
             this.buttonEdit.Location = new System.Drawing.Point(560, 286);
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(15);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Padding = new System.Windows.Forms.Padding(10);
-            this.buttonEdit.Size = new System.Drawing.Size(103, 48);
+            this.buttonEdit.Padding = new System.Windows.Forms.Padding(3);
+            this.buttonEdit.Size = new System.Drawing.Size(103, 33);
             this.buttonEdit.TabIndex = 20;
             this.buttonEdit.TabStop = false;
             this.buttonEdit.Text = "Изменить";
@@ -498,8 +498,8 @@
             this.buttonAdd.Location = new System.Drawing.Point(452, 286);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(15);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Padding = new System.Windows.Forms.Padding(10);
-            this.buttonAdd.Size = new System.Drawing.Size(100, 48);
+            this.buttonAdd.Padding = new System.Windows.Forms.Padding(3);
+            this.buttonAdd.Size = new System.Drawing.Size(100, 33);
             this.buttonAdd.TabIndex = 21;
             this.buttonAdd.TabStop = false;
             this.buttonAdd.Text = "Создать";

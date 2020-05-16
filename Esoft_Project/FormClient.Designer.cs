@@ -224,8 +224,8 @@
             this.buttonAdd.Location = new System.Drawing.Point(364, 239);
             this.buttonAdd.Margin = new System.Windows.Forms.Padding(15);
             this.buttonAdd.Name = "buttonAdd";
-            this.buttonAdd.Padding = new System.Windows.Forms.Padding(10);
-            this.buttonAdd.Size = new System.Drawing.Size(100, 48);
+            this.buttonAdd.Padding = new System.Windows.Forms.Padding(3);
+            this.buttonAdd.Size = new System.Drawing.Size(102, 36);
             this.buttonAdd.TabIndex = 7;
             this.buttonAdd.TabStop = false;
             this.buttonAdd.Text = "Создать";
@@ -239,8 +239,8 @@
             this.buttonEdit.Location = new System.Drawing.Point(472, 239);
             this.buttonEdit.Margin = new System.Windows.Forms.Padding(15);
             this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Padding = new System.Windows.Forms.Padding(10);
-            this.buttonEdit.Size = new System.Drawing.Size(103, 48);
+            this.buttonEdit.Padding = new System.Windows.Forms.Padding(3);
+            this.buttonEdit.Size = new System.Drawing.Size(103, 36);
             this.buttonEdit.TabIndex = 8;
             this.buttonEdit.TabStop = false;
             this.buttonEdit.Text = "Изменить";
@@ -254,8 +254,8 @@
             this.buttonDel.Location = new System.Drawing.Point(583, 239);
             this.buttonDel.Margin = new System.Windows.Forms.Padding(15);
             this.buttonDel.Name = "buttonDel";
-            this.buttonDel.Padding = new System.Windows.Forms.Padding(10);
-            this.buttonDel.Size = new System.Drawing.Size(89, 48);
+            this.buttonDel.Padding = new System.Windows.Forms.Padding(3);
+            this.buttonDel.Size = new System.Drawing.Size(89, 36);
             this.buttonDel.TabIndex = 9;
             this.buttonDel.TabStop = false;
             this.buttonDel.Text = "Удалить";
